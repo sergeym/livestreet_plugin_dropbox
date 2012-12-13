@@ -30,11 +30,11 @@ before_script:
   - cp ./config/config.test.php.dist config/config.test.php
   - cp ./config/config.test.php.dist config/config.local.php
   - sudo sed -i s/sql-mode/#sql-mode/ /etc/mysql/my.cnf
-  - sudo /etc/init.d/mysql restart
+  - sudo service mysql restart
   - sleep 5
 
   - rm -rf ./install
-  - wget -S http://livestreet.test/dropbox/ -O /dev/null
+  - wget -S http://livestreet.test/ -O /dev/null
 
   # start virtual display
   - sh -e /etc/init.d/xvfb start
