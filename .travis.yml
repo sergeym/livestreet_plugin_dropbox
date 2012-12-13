@@ -33,6 +33,8 @@ before_script:
 
   - rm -rf ./install
   - ls -la
+  - ls -la plugins/
+  - ls -la plugins/dropbox
   - wget -S http://livestreet.test/ -O /tmp/dropbox_test.html
   - cat /tmp/dropbox_test.html
 
