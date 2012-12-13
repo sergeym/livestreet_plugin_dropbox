@@ -27,8 +27,18 @@ class FeatureContext extends MinkContext
     public function getEngine() {
         return $this->getSubcontext('base')->getEngine();
     }
+
+    /**
+     * @Then /^the response meta have:$/
+     */
+    public function ResponseMetaHave(TableNode $table)
+    {
+        foreach ($table->getHash() as $genreHash) {
+            $searchValue = preg_quote($genreHash['value'], '/');
+            $pattern = '".*<meta name=\"' . $genreHash['name'] . '\" content=\"' . $searchValue . '\">.*"';
+
+            $this->assertSession()->responseMatches($pattern);
+        }
+    }
+
 }
-
-
-
-

@@ -1,6 +1,6 @@
-Feature: Greeting plugin standart features BDD
-  Test base functionality of LiveStreet greeting plugin standart
+Feature: ls-plugin_dropbox-plugins
+  Test base functionality of ls-plugin_dropbox
 
-  Scenario: Login
+  Scenario: See meta on homepage
     Given I am on "/"
     Then the response status code should be 200
