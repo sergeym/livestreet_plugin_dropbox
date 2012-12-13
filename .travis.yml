@@ -11,6 +11,7 @@ before_script:
   - cp /tmp/ls/.htaccess ./
   - mkdir -p plugins/dropbox && cp -a /tmp/plugins/dropbox/* plugins/dropbox
 
+- echo "" > ./plugins/plugins.dat
 
   - cat ./plugins/plugins.dat
 
