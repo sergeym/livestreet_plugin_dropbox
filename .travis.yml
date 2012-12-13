@@ -44,7 +44,9 @@ before_script:
   - wget -O /tmp/selenium-server-standalone.jar http://selenium.googlecode.com/files/selenium-server-standalone-2.25.0.jar
   - java -jar /tmp/selenium-server-standalone.jar > /dev/null &
 
+  - cd tests/behat/
   - cat ../../plugins/dropbox/tests/behat/behat.yml
+  - cd ../../
   - sleep 5
 
-script: HTTP_APP_ENV=test cd tests/behat/ && php behat.phar --config='../../plugins/dropbox/tests/behat/behat.yml' --strict
+script: HTTP_APP_ENV=test cd tests/behat/ && php behat.phar --config='../../plugins/dropbox/tests/behat/behat.yml'
