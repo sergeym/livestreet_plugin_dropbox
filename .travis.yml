@@ -32,11 +32,7 @@ before_script:
   - sleep 5
 
   - rm -rf ./install
-  - ls -la
-  - ls -la plugins/
-  - ls -la plugins/dropbox
-  - wget -S http://livestreet.test/ -O /tmp/dropbox_test.html
-  - cat /tmp/dropbox_test.html
+  - wget -S http://livestreet.test/ -O /dev/null
 
   # start virtual display
   - sh -e /etc/init.d/xvfb start
@@ -47,4 +43,5 @@ before_script:
   - java -jar /tmp/selenium-server-standalone.jar > /dev/null &
   - sleep 5
 
-script: HTTP_APP_ENV=test cd tests/behat/ && php behat.phar --config='../../plugins/dropbox/tests/behat/behat.yml'
+
+script: HTTP_APP_ENV=test cd tests/behat/ && php behat.phar --config='../../plugins/dropbox/tests/behat/behat.yml' --strict
