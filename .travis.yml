@@ -4,13 +4,12 @@ php:
   - 5.3
 
 before_script:
-  - mkdir -p /tmp/plugins/dropbox
-  - mv * /tmp/plugins/dropbox
-  - mkdir /tmp/ls && git clone git://github.com/sergeym/livestreet.git /tmp/ls
+  - mkdir -p /tmp/plugins/seo
+  - mv * /tmp/plugins/seo
+  - mkdir /tmp/ls && git clone git://github.com/stfalcon-studio/livestreet.git /tmp/ls
   - cp -a /tmp/ls/* ./
   - cp /tmp/ls/.htaccess ./
-  - mkdir -p plugins/dropbox && cp -a /tmp/plugins/dropbox/* plugins/dropbox
-  - echo "dropbox" > ./plugins/plugins.dat
+  - mkdir -p plugins/seo && cp -a /tmp/plugins/seo/* plugins/seo
 
   # change application working folders for write access
   - chmod -R 0777 ./tmp
@@ -32,8 +31,9 @@ before_script:
   - sleep 5
 
   - rm -rf ./install
-  - wget -S http://livestreet.test/ -O /dev/null
-  - sleep 1
+  - ls -la
+  - wget -S http://livestreet.test/ -O /tmp/seo_test.html
+  - cat /tmp/seo_test.html
 
   # start virtual display
   - sh -e /etc/init.d/xvfb start
@@ -45,4 +45,4 @@ before_script:
   - sleep 5
 
 
-script: HTTP_APP_ENV=test cd tests/behat/ && php behat.phar --config='../../plugins/dropbox/tests/behat/behat.yml' --strict
+script: HTTP_APP_ENV=test cd tests/behat/ && php behat.phar --config='../../plugins/seo/tests/behat/behat.yml'
