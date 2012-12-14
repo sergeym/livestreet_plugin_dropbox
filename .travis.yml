@@ -33,6 +33,7 @@ before_script:
 
   - rm -rf ./install
   - wget -S http://livestreet.test/ -O /dev/null
+  - sleep 1
 
   # start virtual display
   - sh -e /etc/init.d/xvfb start
