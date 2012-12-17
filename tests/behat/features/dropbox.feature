@@ -7,9 +7,9 @@ Feature: ls-plugin_dropbox-plugins
 
     Scenario: Authentification
         Given I am on "/"
-        And I should see "Войти"
+        And I should see "Login"
         When I fill in "email" with "admin"
         And I fill in "password" with "admin"
-        And I press "Войти"
+        And I press "Login"
         Then I should be on "/"
         And I should see "Admin"
