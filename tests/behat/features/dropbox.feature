@@ -6,9 +6,7 @@ Feature: ls-plugin_dropbox-plugins
         Then the response status code should be 200
 
     Scenario: Authentification
-        Given I am on "/"
-        And I should see "Login"
-        When I click on "Login"
+        Given I am on "/login"
         When I fill in "email" with "admin"
         And I fill in "password" with "admin"
         And I press "Login"
