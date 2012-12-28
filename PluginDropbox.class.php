@@ -33,8 +33,7 @@ class PluginDropbox extends Plugin {
 	 * Plugin Dropbox activation
 	 */
 	public function Activate() {
-
-        return true;
+        return $this->PluginDropbox_Dropbox_Activate();
 	}
 	/**
 	 * Init plugin Dropbox
