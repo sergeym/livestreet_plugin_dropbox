@@ -21,6 +21,10 @@ class PluginDropbox_ModuleDropbox extends Module {
 
     const ACTIVATION_COOKIE_NAME = 'dropbox-plugin-activation';
 
+    public function Init() {
+        return true;
+    }
+
     /**
      * @return bool
      */
